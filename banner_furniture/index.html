@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="ad.size" content="width=1140,height=120">
+	<title>Banner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+    .canvas-banner{
+      width: 1140px;
+      max-width: 1140px;
+      height: 120px;
+      padding: 10px 30px 10px 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      background-image: url("background-gray.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .banner__img-wrap{
+      max-width: 110px;
+      max-height: 110px;
+    }
+    .banner__img{
+      width: 110px;
+      height: 110px;
+    }
+    .banner__text{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 27px;
+      line-height: 120%;
+      text-transform: uppercase;
+      color: #fff;
+      flex: 1;
+    }
+    .br-mob{
+      display: none;
+    }
+    .banner__sale-wrap{
+      width: 135px;
+      height: 135px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      background-image: url("sale-background.svg");
+      background-position: left bottom;
+      background-repeat: no-repeat;
+    }
+    .banner__sale {
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      font-weight: 800;
+      font-size: 18px;
+      line-height: 100%;
+      text-align: center;
+      position: absolute;
+      left: 5px;
+      bottom: 21px;
+      transform: rotate(-15deg);
+    }
+    .banner__btn-wrap{
+      animation-name: scaleButton;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+    .banner__btn{
+      font-family: 'Montserrat', sans-serif;
+      background: #FFCE41;
+      width: 250px;
+      height: 65px;
+      box-shadow: 0px 6px 20px rgba(255, 184, 0, 0.35);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #1C253D;
+      margin-left: 4px;
+      animation-name: changeColor;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+    .banner__hand{
+      position: absolute;
+      right: 0;
+      bottom: -45px;
+      animation-name: movementArrow;
+      animation-duration:  8s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes movementArrow {
+      0%   {
+        right: 0;
+        bottom: -45px;
+      }
+      25%   {
+        right: 0;
+        bottom: -45px;
+      }
+      50% {
+        right: 45px;
+        bottom: 8px;
+      }
+      60% {
+        right: 45px;
+        bottom: 8px;
+      }
+      85%   {
+        right: 0;
+        bottom: -45px;
+      }
+      100% {
+        right: 0;
+        bottom: -45px;
+      }
+    }
+    @keyframes changeColor {
+      0%   {
+        background-color: #FFCE41;
+      }
+      35%   {
+        background-color: #FFCE41;
+      }
+      40% {
+        background-color: #F1B300;
+      }
+      65% {
+        background-color: #F1B300;
+      }
+      70%   {
+        background-color: #FFCE41;
+      }
+      100% {
+        background-color: #FFCE41;
+      }
+    }
+    @keyframes scaleButton {
+      0%   {
+        transform: scale(1);
+      }
+      53%   {
+        transform: scale(1);
+      }
+      55%   {
+        transform: scale(0.95);
+      }
+      57%   {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media all and (max-width: 1140px){
+      .canvas-banner{
+        width: unset;
+      }
+      .banner__text{
+        font-size: 24px ;
+      }
+      .banner__btn{
+        width: 150px;
+        height: 65px;
+      }
+    }
+    @media all and (max-width: 1024px){
+      .banner__text{
+        font-size: 22px;
+      }
+      .banner__btn{
+        font-size: 12px;
+        width: 100px;
+      }
+    }
+    @media all and (max-width: 786px){
+      .banner__text{
+        font-size: 16px;
+      }
+      .banner__btn{
+        text-align: center;
+        line-height: 120%;
+      }
+    }
+    @media all and (max-width: 660px){
+      .canvas-banner{
+        padding: 10px 16px 10px 70px;
+      }
+      .banner__sale-wrap{
+        background-image: url("sale-background-mob.svg");
+        width: 77px;
+        height: 77px;
+        bottom: 21px;
+      }
+      .banner__sale{
+        font-size: 10px;
+        left: 0;
+        bottom: 32px;
+      }
+      .banner__img-wrap{
+        display: none;
+      }
+    }
+    @media all and (max-width: 500px){
+      .banner__text{
+        font-size: 14px;
+      }
+    }
+    @media all and (max-width: 450px){
+      .banner__text{
+        font-size: 11px;
+      }
+      .canvas-banner{
+        background-position: 15%;
+      }
+      .banner__btn{
+        font-size: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:window.open(window.clickTag)">
+  <div id="canvas-banner-animation" class="canvas-banner">
+    <div class="banner__sale-wrap">
+      <div class="banner__sale">
+        От<br> 42 000 ₽
+      </div>
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="4.svg">
+    </div>
+    <span class="banner__text">
+      Отраслевой интернет&#8209;магазин мебели и&nbsp;мебельных комплектов
+  </span>
+    <div class="banner__btn-wrap">
+    <div class="banner__btn">
+      Подробнее
+    </div>
+  </div>
+    <div class="banner__hand">
+    <img src="hand.svg">
+  </div>
+  </div>
+</a>
+</body>
+</html>

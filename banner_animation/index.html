@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="ad.size" content="width=1140,height=120">
+	<title>Banner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    a{
+      color: inherit;
+      text-decoration: none;
+    }
+    .canvas-banner{
+      width: 1140px;
+      max-width: 1140px;
+      height: 120px;
+      padding: 10px 30px 10px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      background-image: url("background-green.svg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .banner__images-wrap{
+      position: absolute;
+      bottom: 10px;
+      animation-name: movementBoxes;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+    .banner__img-wrap{
+      max-width: 100px;
+      max-height: 100px;
+      margin-right: 15px;
+      padding-top: 10px;
+    }
+    .banner__img{
+      width: 100px;
+      height: 100px;
+    }
+    .banner__text{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 130%;
+      text-transform: uppercase;
+      color: #fff;
+      flex: 1;
+      padding-left: 115px;
+    }
+    .br-mob{
+      display: none;
+    }
+    .banner__sale{
+      font-family: 'Montserrat', sans-serif;
+      padding: 3px 14px;
+      height: 28px;
+      max-width: 202px;
+      text-transform: uppercase;
+      color: #FFFFFF;
+      background: #ED635A;
+      border-radius: 35px;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 100%;
+      position: relative;
+      left: 21px;
+      bottom: 4px;
+      white-space: nowrap;
+    }
+    .banner__btn-wrap{
+      animation-name: scaleButton;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+    .banner__btn{
+      font-family: 'Montserrat', sans-serif;
+      background: #FFCE41;
+      width: 250px;
+      height: 65px;
+      box-shadow: 0px 6px 20px rgba(255, 184, 0, 0.35);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-weight: 700;
+      font-size: 14px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: #1C253D;
+      margin-left: 34px;
+      animation-name: changeColor;
+      animation-duration: 8s;
+      animation-iteration-count: infinite;
+    }
+    .banner__hand{
+      position: absolute;
+      right: 0;
+      bottom: -45px;
+      animation-name: movementArrow;
+      animation-duration:  8s;
+      animation-iteration-count: infinite;
+    }
+    @keyframes movementBoxes {
+      0%   { transform: translateY(0); }
+      20%  { transform: translateY(110px); }
+      40%  { transform: translateY(220px); }
+      60%  { transform: translateY(330px); }
+      80%  { transform: translateY(440px); }
+      100%  { transform: translateY(550px); }
+    }
+    @keyframes movementArrow {
+      0%   {
+        right: 0;
+        bottom: -45px;
+      }
+      25%   {
+        right: 0;
+        bottom: -45px;
+      }
+      50% {
+        right: 45px;
+        bottom: 8px;
+      }
+      60% {
+        right: 45px;
+        bottom: 8px;
+      }
+      85%   {
+        right: 0;
+        bottom: -45px;
+      }
+      100% {
+        right: 0;
+        bottom: -45px;
+      }
+    }
+    @keyframes changeColor {
+      0%   {
+        background-color: #FFCE41;
+      }
+      35%   {
+        background-color: #FFCE41;
+      }
+      40% {
+        background-color: #F1B300;
+      }
+      65% {
+        background-color: #F1B300;
+      }
+      70%   {
+        background-color: #FFCE41;
+      }
+      100% {
+        background-color: #FFCE41;
+      }
+    }
+    @keyframes scaleButton {
+      0%   {
+        transform: scale(1);
+      }
+      53%   {
+        transform: scale(1);
+      }
+      55%   {
+        transform: scale(0.95);
+      }
+      57%   {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @media all and (max-width: 1140px){
+      .canvas-banner{
+        width: unset;
+      }
+      .banner__text{
+        font-size: 28px;
+      }
+      .banner__sale{
+        font-size: 18px;
+        left: 14px;
+        bottom: 6px;
+      }
+      .banner__btn{
+        /*width: 100px;*/
+        width: 180px;
+        height: 65px;
+        padding: 0 20px;
+        margin-left: 14px;
+      }
+    }
+    @media all and (max-width: 1024px){
+      .banner__text{
+        font-size: 26px;
+      }
+      .banner__sale{
+        padding: 1px 11px;
+        bottom: 4px;
+        left: 7px;
+      }
+      .banner__btn{
+        font-size: 12px;
+        width: 100px;
+      }
+    }
+    @media all and (max-width: 786px){
+      .banner__text{
+        font-size: 20px;
+        line-height: 140%;
+      }
+      .banner__sale{
+        bottom: 4px;
+        font-size: 16px;
+      }
+      .banner__btn{
+        text-align: center;
+        line-height: 120%;
+        padding: 0 10px;
+      }
+    }
+    @media all and (max-width: 660px){
+      .banner__images-wrap{
+        display: none;
+      }
+      .banner__text{
+        padding-left: 0;
+      }
+    }
+    @media all and (max-width: 500px){
+      .canvas-banner{
+        padding: 10px;
+      }
+      .banner__text{
+        font-size: 16px;
+      }
+      .banner__sale{
+        font-size: 14px;
+        bottom: 0;
+      }
+    }
+    @media all and (max-width: 450px){
+      .canvas-banner{
+        background-position: 15%;
+      }
+      .br-mob{
+        display: block;
+      }
+      .banner__sale{
+        left: 0;
+      }
+    }
+    @media all and (max-width: 400px) {
+      .banner__text {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+<a href="javascript:window.open(window.clickTag)">
+  <div id="canvas-banner-animation" class="canvas-banner">
+    <div class="banner__images-wrap">
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="1.svg">
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="5.svg">
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="4.svg">
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="3.svg">
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="2.svg">
+    </div>
+    <div class="banner__img-wrap">
+      <img class="banner__img" src="1.svg">
+    </div>
+  </div>
+    <span class="banner__text">
+      запустите интернет&#8209;магазин на&nbsp;1С&#8209;Битрикс<br class="br-mob"><span class="banner__sale">От 23 688₽</span>
+  </span>
+    <div class="banner__btn-wrap">
+    <div class="banner__btn">
+      Подробнее
+    </div>
+  </div>
+    <div class="banner__hand">
+    <img src="hand.svg">
+  </div>
+  </div>
+</a>
+</body>
+</html>
